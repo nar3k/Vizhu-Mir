@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MenuTree from './MenuTree'
-import {Button, Menu, Icon,Container} from 'semantic-ui-react'
+import {Button, Menu, Icon,Container,Divider,Image,Header,Grid} from 'semantic-ui-react'
 import Link from 'react-router/Link';
 import Miss from 'react-router/Miss';
 import Match from 'react-router/Match'
@@ -11,7 +11,7 @@ import Redirect from 'react-router/Redirect'
 
 const NoMatch = ({ location }) => (
   <div className='ui inverted red raised very padded text container segment'>
-    <strong>Error!</strong> No route found matching:
+    <strong>Ошибка</strong> К сожалению, у нас нет такой страницы:(
     <div className='ui inverted black segment'>
       <code>{location.pathname}</code>
     </div>
@@ -37,6 +37,25 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Grid columns={3}>
+          <Grid.Row>
+            <Grid.Column>
+            <Image size='small' shape='rounded' floated='left'  src={"https://s3.eu-west-2.amazonaws.com/nrk-files/"+'static/logo.png'}/>
+           </Grid.Column>
+           <Grid.Column>
+                <Header size='large' color='red'>
+                  Сеть Салонов оптики "Вижу Мир!<br/>
+                  Очки и контактные линзы</Header>
+            </Grid.Column>
+            <Grid.Column>
+              <Header size='small' color='black' floated='right'>
+                +7 (926) 100-15-12 <br/>
+                +7 (905) 550-02-55 <br/>
+                +7 (926) 317-31-13 <br/>
+              </Header>
+          </Grid.Column>
+          </Grid.Row>
+            </Grid>
         <Container fluid>
           <Menu inverted attached='top' size='large' pointing color='blue' fluid>
 
@@ -52,10 +71,9 @@ class App extends Component {
             ))}
           </Menu>
         </Container>
-        <div className='spacer row' />
-        <div className='row'>
+        <Divider/>
         {
-          MenuTree.map((menuItem,key) => (
+          MenuTree.map((menuItem) => (
           <Match pattern={menuItem.to} component={menuItem.component}/>
         ))
       }
@@ -65,8 +83,8 @@ class App extends Component {
             />
           )} />
               <Miss component={NoMatch} />
-          </div>
-      </div>
+
+    </div>
     );
   }
 }
