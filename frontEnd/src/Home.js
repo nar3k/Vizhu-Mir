@@ -11,7 +11,7 @@ const cardContent = [
 ]
 
 
-const Contacts = () => (
+const Home = () => (
   <div >
   <Container>
     <Header as='h1'>Добро пожаловать!</Header>
@@ -41,4 +41,4 @@ const Contacts = () => (
   </div>
 );
 
-export default Contacts;
+export default Home;
