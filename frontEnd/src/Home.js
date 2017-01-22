@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Menu, Image,Container,Header,Card,Divider} from 'semantic-ui-react'
+import {Button, Menu, Image,Container,Header,Card,Divider,Grid} from 'semantic-ui-react'
 import Link from 'react-router/Link';
 
 
@@ -13,30 +13,32 @@ const cardContent = [
 
 const Home = () => (
   <div >
-  <Container>
+  <Container text>
     <Header as='h1'>Добро пожаловать!</Header>
   </Container>
-  <Container>
+  <Container >
     Сеть салонов оптики «ВИЖУ МИР» - это динамично развивающаяся компания основанная в 2010 году. Тысячи людей доверяют нам самое ценное – свое зрение. Наша задача помочь вам лучше видеть и лучше выглядеть. Мы гарантируем высокое качество ассортимента и профессионализм наших сотрудников. Мы сделали выбор очков и контактных линз простым и удобным.
  В салонах оптики «ВИЖУ МИР» вы можете получить полный комплекс офтальмологических услуг:
   </Container>
   <Divider/>
-  <Container>
-    <Card.Group itemsPerRow={2}>
+  <Container text>
+    <Grid columns={2} stackable centered stretched>
       {
         cardContent.map((card,key)=>(
-          <Card as={Link}
+          <Grid.Column>
+          <Card as={Link} fluid
             to={card.to} >
             <Card.Content>
-            <Image size='medium' shape='circular' bordered src={"https://s3.eu-west-2.amazonaws.com/nrk-files/"+card.img}/>
+                <Image size='medium' shape='circular' bordered src={"https://s3.eu-west-2.amazonaws.com/nrk-files/"+card.img}/>
             <Card.Header>{card.header}</Card.Header>
             <Card.Description>{card.comment}</Card.Description>
 
             </Card.Content>
           </Card>
+          </Grid.Column>
         ))
       }
-    </Card.Group>
+    </Grid>
   </Container>
   </div>
 );

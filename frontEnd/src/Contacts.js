@@ -82,7 +82,7 @@ const Contacts = () => (
     {
       stores.map((store,key)=> (
     <Message>
-    <Grid columns={2} divided>
+    <Grid columns={2} divided stackable>
     <Grid.Column width={11}>
       <Header size='small'>
         {store.name}
@@ -96,7 +96,7 @@ const Contacts = () => (
         store.phones.map((phone,index)=>(
           <div>
             <Icon name='call' ></Icon>
-             {phone}
+             <a href={'tel:'+phone}>{phone}</a>
            </div>
         ))
       }
@@ -109,10 +109,10 @@ const Contacts = () => (
     { !!store.imgs ?
       <div>
     <Divider/>
-    <Grid columns={3} divided>
+    <Grid columns={3} >
       {
         store.imgs.map((img,index)=>(
-          <Grid.Column>
+          <Grid.Column only={['tablet','computer']}>
             <Image src={"https://s3.eu-west-2.amazonaws.com/nrk-files/static/"+img}/>
           </Grid.Column>
         ))
@@ -122,7 +122,7 @@ const Contacts = () => (
     : ''
   }
     </Grid.Column>
-    <Grid.Column width={5}>
+    <Grid.Column width={5} verticalAlign>
     <Map onAPIAvailable={function () { console.log('API loaded'); }}
       center={store.map.center} zoom={store.map.zoom}
       width={400}

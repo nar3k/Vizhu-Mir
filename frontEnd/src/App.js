@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MenuTree from './MenuTree'
-import {Button, Menu, Icon,Container,Divider,Image,Header,Grid} from 'semantic-ui-react'
+import {Button, Menu, Icon,Container,Divider,Image,Header,Grid,Segment} from 'semantic-ui-react'
 import Link from 'react-router/Link';
 import Miss from 'react-router/Miss';
 import Match from 'react-router/Match'
@@ -42,22 +42,23 @@ class App extends Component {
             <Grid.Column>
             <Image size='small' shape='rounded' floated='left'  src={"https://s3.eu-west-2.amazonaws.com/nrk-files/"+'static/logo.png'}/>
            </Grid.Column>
-           <Grid.Column>
+           <Grid.Column only='computer'>
                 <Header size='large' color='red'>
-                  Сеть Салонов оптики "Вижу Мир!<br/>
-                  Очки и контактные линзы</Header>
+                  Сеть Салонов оптики <br/>
+                    «Вижу Мир» <br/>
+                Очки и контактные линзы</Header>
             </Grid.Column>
-            <Grid.Column>
-              <Header size='small' color='black' floated='right'>
-                +7 (926) 100-15-12 <br/>
-                +7 (905) 550-02-55 <br/>
-                +7 (926) 317-31-13 <br/>
+            <Grid.Column floated='right'>
+              <Header size='tiny' color='black' floated='right'>
+                <a href="tel:+7(926)100-15-12">+7(926)100-15-12</a> <br/>
+                <a href="tel:+7(905)550-02-55">+7(926)550-02-55</a> <br/>
+                <a href="tel:+7(926)317-31-13">+7(926)317-31-13</a><br/>
               </Header>
           </Grid.Column>
           </Grid.Row>
             </Grid>
         <Container fluid>
-          <Menu inverted attached='top' size='large' pointing color='blue' fluid>
+          <Menu inverted size='large' pointing  fluid compact stackable>
 
               {MenuTree.map((menuItem,key) => (
 
@@ -83,7 +84,12 @@ class App extends Component {
             />
           )} />
               <Miss component={NoMatch} />
-
+            <Divider/>
+            <Segment.Group horizontal>
+              <Segment>2010-2016</Segment>
+              <Segment></Segment>
+              <Segment>ООО "Вижу мир"</Segment>
+            </Segment.Group>
     </div>
     );
   }
