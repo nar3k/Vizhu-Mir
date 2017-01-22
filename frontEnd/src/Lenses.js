@@ -126,7 +126,7 @@ const Contacts = () => (
             <Card fluid
               >
               <Card.Content>
-                  <Image size='medium'  bordered src={"https://s3.eu-west-2.amazonaws.com/nrk-files/static/lenses/"+lense.img +".png"}/>
+                  <Image size='medium'  bordered src={"http://vizhu-mir.s3-website-us-east-1.amazonaws.com/"+lense.img +".png"}/>
               <Card.Header>{lense.header}</Card.Header>
               <Card.Meta>{lense.meta}</Card.Meta>
               <Card.Description>

@@ -7,7 +7,7 @@ import {Message,Popup,Grid,Header,Icon,Container,Divider,Image} from 'semantic-u
 
 const vizhuIcon = (
   <div style={{borderRadius: '100%', overflow: 'hidden'}}>
-          <img src="https://s3.eu-west-2.amazonaws.com/nrk-files/static/icon.png"/>
+          <img src="http://vizhu-mir.s3-website-us-east-1.amazonaws.com/static/icon.png"/>
     </div>
   )
 
@@ -113,7 +113,7 @@ const Contacts = () => (
       {
         store.imgs.map((img,index)=>(
           <Grid.Column only={['tablet','computer']}>
-            <Image src={"https://s3.eu-west-2.amazonaws.com/nrk-files/static/"+img}/>
+            <Image src={"http://vizhu-mir.s3-website-us-east-1.amazonaws.com/static/"+img}/>
           </Grid.Column>
         ))
       }

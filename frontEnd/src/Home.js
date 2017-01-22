@@ -29,7 +29,7 @@ const Home = () => (
           <Card as={Link} fluid
             to={card.to} >
             <Card.Content>
-                <Image size='medium' shape='circular' bordered src={"https://s3.eu-west-2.amazonaws.com/nrk-files/"+card.img}/>
+                <Image size='medium' shape='circular' bordered src={"http://vizhu-mir.s3-website-us-east-1.amazonaws.com/"+card.img}/>
             <Card.Header>{card.header}</Card.Header>
             <Card.Description>{card.comment}</Card.Description>
 

@@ -40,7 +40,7 @@ class App extends Component {
         <Grid columns={3}>
           <Grid.Row>
             <Grid.Column>
-            <Image size='small' shape='rounded' floated='left'  src={"https://s3.eu-west-2.amazonaws.com/nrk-files/"+'static/logo.png'}/>
+            <Image size='small' shape='rounded' floated='left'  src={"http://vizhu-mir.s3-website-us-east-1.amazonaws.com/"+'static/logo.png'}/>
            </Grid.Column>
            <Grid.Column only='computer'>
                 <Header size='large' color='red'>
